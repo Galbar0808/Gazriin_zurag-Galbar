@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Maps Directions Example</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlptCwynEVpsDeCxZLpw8fL4NFtq96CGU&libraries=places"></script>
+    <script src="script.js"></script>
+    <style>
+        /* Картыг үзүүлэх элементэд зориулсан загвар */
+        #map {
+            height: 80vh;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Мэдээллийг үзүүлэх элементэд зориулсан загвар */
+        #currentLocationDisplay, #errorMessage {
+            margin: 10px;
+        }
+
+        /* Товчлууруудын загвар */
+        .control-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px;
+        }
+
+        .control-buttons input, .control-buttons button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .control-buttons input[type="text"] {
+            flex: 1;
+            min-width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="currentLocationDisplay"></div>
+    <div id="errorMessage"></div>
+
+    <!-- Хяналтын товчлуурууд -->
+    <div class="control-buttons">
+       
+        <button id="getAtmsBtn">ATM олох</button>
+        <button id="getRestaurantsBtn">Ресторан олох</button>
+        <button id="getStoresBtn">Дэлгүүр олох</button>
+        <button id="getHospitalsBtn">Эмнэлэг олох</button>
+        <input type="text" id="destinationInput" placeholder="Зорилтот байршил оруулна уу">
+        <button id="getDirectionsBtn">Замын чиглэл авах</button>
+    </div>
+
+    <script>
+        // initMap функцийг цонх ачаалагдсан үед ажиллуулна
+        window.onload = initMap;
+    </script>
+</body>
+</html>
